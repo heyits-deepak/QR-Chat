@@ -1,0 +1,57 @@
+/* Custom CSS for styling */
+body {
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px; /* Increased width to accommodate QR codes */
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#chat {
+  overflow-y: auto; /* Ensure chat is scrollable */
+  max-height: 400px; /* Limit chat height with maximum height */
+}
+
+li {
+  display: flex; /* Use flexbox for better alignment of messages and QR codes */
+  align-items: center; /* Align items vertically */
+  justify-content: flex-end; /* Align items to the right */
+  margin-bottom: 10px; /* Add some space between messages */
+}
+
+.user-message, .other-message {
+  max-width: 60%; /* Limit message width */
+  word-wrap: break-word; /* Ensure long words do not overflow */
+  margin: 5px 10px; /* Adjust margin for spacing */
+  padding: 5px 10px; /* Padding inside message bubbles */
+  border-radius: 0.5em; /* Rounded corners for message bubbles */
+  color: #fff; /* Text color */
+}
+
+.user-message {
+  background-color: #17A2B8; /* User message color */
+  order: 1; /* Ensure message is on the right */
+}
+
+.other-message {
+  background-color: #007BFF; /* Other message color */
+  order: -1; /* Ensure message is on the left */
+}
+
+.qr-code {
+  margin-left: 10px; /* Space between message and its QR code */
+  order: 2; /* Ensure QR code appears to the right of the message */
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
