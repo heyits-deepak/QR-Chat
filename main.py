@@ -59,7 +59,6 @@ async def websocket_endpoint(websocket: WebSocket):
             await connection_manager.broadcast(websocket, data)
     except WebSocketDisconnect:
         connection_manager.disconnect(websocket)
-        # Note: RedirectResponse is not applicable in WebSocket disconnection context.
 
 @app.get("/join", response_class=HTMLResponse)
 async def join_room(request: Request):
