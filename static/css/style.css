@@ -1,74 +1,99 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  background-color: #edf0f5;
+body {
+  background-color: #f9f9f9;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 0 auto;
-  margin-top: 0; /* Updated to 0 to match new rules */
+  max-width: 800px;
+  margin: 50px auto;
   background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: left; /* Changed to left-align text within the container */
 }
 
 #chat {
-  flex: 1;
   overflow-y: auto;
-  max-height: 500px; /* Retained from original for max-height limit */
-  padding: 10px;
-  display: flex;
-  flex-direction: column-reverse; /* Newest messages at the bottom */
-  background-color: #f9fafb;
-  border: 1px solid #e1e4e8;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  max-height: 500px; /* Increased for better viewing */
+  background-color: #f0f2f5; /* Lighter background for chat area */
+  border-radius: 10px; /* Rounded corners for chat box */
+  padding: 15px; /* Padding inside chat box for spacing */
 }
 
 li {
-  margin-bottom: 12px;
-  padding: 8px;
-  background-color: #f4f7f6;
-  border-radius: 18px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  display: block; /* Stack messages vertically for clarity */
+  margin-bottom: 15px; /* Increased space between messages */
 }
 
 .user-message, .other-message {
-  max-width: 70%;
-  padding: 10px;
-  color: #333;
+  max-width: 70%; /* Increased width for longer texts */
+  word-wrap: break-word; /* Ensure long words wrap */
+  margin: 5px;
+  padding: 10px 15px; /* Increased padding for bubble look */
+  border-radius: 20px; /* More pronounced rounded corners for bubbles */
+  color: #333; /* Darker text color for better readability */
 }
 
 .user-message {
-  background-color: #dcf8c6;
-  align-self: flex-end;
+  background-color: #dcf8c6; /* Light green background for user's messages */
+  margin-left: auto; /* Align user messages to the right */
+  text-align: left; /* Text aligned left within the message bubble */
 }
 
 .other-message {
-  background-color: #ebebeb;
-  align-self: flex-start;
+  background-color: #ebebeb; /* Light grey for other messages */
+  margin-right: auto; /* Align other messages to the left */
+  text-align: left; /* Text aligned left within the message bubble */
 }
 
 .qr-code {
-  padding-left: 10px;
+  display: inline-block; /* Display QR codes inline with messages */
+  margin-top: 10px; /* Space between message and QR code */
+  float: right; /* Align QR code to the right */
+  clear: both; /* Avoid overlap with subsequent elements */
 }
 
-.input-group.mb-3 {
-  position: fixed;
-  bottom: 0;
-  width: calc(100% - 40px); /* Adjust width to fit inside .container */
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Additional styles for UI elements */
+#username-form, #message-input {
+  margin-top: 20px; /* Spacing above the form */
+}
+
+#message-input {
+  display: flex; /* Flex display for input group */
+  border-radius: 20px; /* Rounded corners for input box */
+  overflow: hidden; /* Ensure the rounded corners clip content */
+}
+
+#message {
+  border: 0; /* Remove border */
+  padding-left: 15px; /* Padding inside input */
+  flex-grow: 1; /* Allow input to expand to fill space */
+}
+
+#send {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* White text on buttons */
+  border: 0; /* Remove border */
+  padding: 0.375rem 0.75rem; /* Padding to match Bootstrap's style */
+}
+
+/* Modal customizations */
+#usernameModal .modal-content {
+  border-radius: 20px; /* Rounded corners for modal */
+}
+
+#usernameModalLabel {
+  text-align: center; /* Center modal title */
+}
+
+.input-group-append {
+  background-color: #007bff; /* Match send button color */
+  border-radius: 0 20px 20px 0; /* Rounded corners on the right side */
 }
