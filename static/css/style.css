@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
 /* Custom CSS for styling */
+
 body {
   background-color: #f4f4f4;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
@@ -8,15 +15,114 @@ body {
   margin: 0 auto;
   margin-top: 50px;
   background-color: #fff;
-  padding: 20px;
+  padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
+.container h1{
+  color: blue;
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Jersey 15", sans-serif;
+  letter-spacing: 3px;
+}
+
 #chat {
   overflow-y: auto; /* Ensure chat is scrollable */
-  max-height: 400px; /* Limit chat height with maximum height */
+  height: 400px; /* Limit chat height with maximum height */
+  background: #fff;
+  border: 0.8px solid rgba(0, 0, 255, 0.7);
+  padding: 20px 10px;
+}
+
+#chat::-webkit-scrollbar {
+  width: 8px; 
+  background-color: transparent; 
+}
+
+#chat::-webkit-scrollbar-thumb {
+  background-color: pink; 
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.joinBtn{
+  padding: 5px 12px;
+  background-color: blue;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.7rem;
+  font-family: "Jersey 15", sans-serif;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: transform ease-in-out 0.3s;
+}
+
+.joinBtn:hover, .modal-footer button:hover{
+  transform: scale(1.04);
+}
+
+#usernameModal{
+  background-color: rgba(0, 94, 255, 0.299);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#usernameModal div{
+  border: none;
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.1);
+  font-family: "Jersey 15", sans-serif;
+  overflow: hidden;
+}
+
+#usernameModal div h5{
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: blue;
+  padding: 20px;
+}
+
+#usernameModal div input{
+  margin: 10px 20px;
+  width: 92%;
+  font-size: x-large;
+  padding: 0 10px;
+  color: #666363;
+  font-weight: 200;
+  border-radius: 5px;
+  border: solid 1px gray;
+}
+
+#usernameModal div input:focus{
+  outline: none;
+}
+
+.modal-footer{
+  padding: 20px;
+}
+
+.modal-footer button{
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  transition: transform ease-in-out 0.3s;
+}
+
+#join{
+  background: blue;
 }
 
 li {
