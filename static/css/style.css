@@ -2,12 +2,15 @@
 /* Custom CSS for styling */
 
 body {
-  background-color: #f4f4f4;
-  height: 90vh;
+  background-image: #f4f4f4;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(to bottom , rgba(0, 34, 255, 0.77), rgba(0, 51, 255, 0.485)), url('/static/QRBack.jpg') ;
+  background-size: cover; 
+  background-position: center;
 }
 
 .container {
@@ -17,7 +20,7 @@ body {
   background-color: #fff;
   padding: 20px 30px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.408);
   text-align: center;
 }
 
@@ -35,7 +38,7 @@ body {
   overflow-y: auto; /* Ensure chat is scrollable */
   height: 400px; /* Limit chat height with maximum height */
   background: #fff;
-  border: 0.8px solid rgba(0, 0, 255, 0.7);
+  border: 0.8px solid gray;
   padding: 20px 10px;
 }
 
@@ -45,7 +48,7 @@ body {
 }
 
 #chat::-webkit-scrollbar-thumb {
-  background-color: pink; 
+  background-color: gray; 
   border-radius: 6px;
   cursor: pointer;
 }
@@ -79,7 +82,7 @@ body {
 
 #usernameModal div{
   border: none;
-  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 8px rgba(251, 249, 249, 0.819);
   font-family: "Jersey 15", sans-serif;
   overflow: hidden;
 }
