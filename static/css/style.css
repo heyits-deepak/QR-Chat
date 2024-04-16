@@ -5,6 +5,7 @@ body {
   background-image: #f4f4f4;
   height: 100vh;
   overflow: hidden;
+  overflow-y: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +17,6 @@ body {
 .container {
   max-width: 800px; /* Increased width to accommodate QR codes */
   margin: 0 auto;
-  margin-top: 50px;
   background-color: #fff;
   padding: 20px 30px;
   border-radius: 10px;
@@ -39,15 +39,15 @@ body {
   height: 430px; /* Limit chat height with maximum height */
   background: #fff;
   border: 0.8px solid gray;
-  padding: 20px 0px;
+  padding: 0px 0px;
 }
 
-#chat::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px; 
   background-color: transparent; 
 }
 
-#chat::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: gray; 
   border-radius: 6px;
   cursor: pointer;
@@ -128,14 +128,23 @@ body {
   background: blue;
 }
 
+#messages{
+  min-height: 95%;
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  overflow: auto;
+}
+
 li {
   display: flex;
   align-items: center; 
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .user-message, .other-message {
-  max-width: 60%; 
+  max-width: 70%; 
   word-wrap: break-word;
   margin: 12px 0px; 
   padding: 5px 10px; 
@@ -147,6 +156,7 @@ li {
   letter-spacing: 2px;
   font-size: 1.3rem;
   font-weight: 400;
+  text-align: left;
 }
 
 .user-message {
@@ -162,6 +172,7 @@ li {
 .qr-code {
   width: fit-content;
   padding: 5px 10px;
+  margin-top: 12px;
   border-top-right-radius: 0.5em; 
   border-bottom-right-radius: 0.5em;
   border-left: 3px solid blue;
@@ -172,4 +183,44 @@ li {
   content: "";
   clear: both;
   display: table;
+}
+
+#message-input{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#message-input input{
+  width: 90%;
+  font-family: "Jersey 15", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  padding: 0 10px;
+  color: #666363;
+  font-weight: 200;
+  border-radius: 5px;
+  border: solid 1px gray;
+}
+#message-input input:focus{
+  outline: none;
+}
+
+#send{
+  padding: 1.5px 8px;
+  height: 100%;
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.4rem;
+  font-family: "Jersey 15", sans-serif;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: transform ease-in-out 0.3s;
+}
+
+#send:hover{
+  transform: scale(1.02);
 }
