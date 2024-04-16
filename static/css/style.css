@@ -36,10 +36,10 @@ body {
 
 #chat {
   overflow-y: auto; /* Ensure chat is scrollable */
-  height: 400px; /* Limit chat height with maximum height */
+  height: 430px; /* Limit chat height with maximum height */
   background: #fff;
   border: 0.8px solid gray;
-  padding: 20px 10px;
+  padding: 20px 0px;
 }
 
 #chat::-webkit-scrollbar {
@@ -129,34 +129,43 @@ body {
 }
 
 li {
-  display: flex; /* Use flexbox for better alignment of messages and QR codes */
-  align-items: center; /* Align items vertically */
-  justify-content: flex-end; /* Align items to the right */
-  margin-bottom: 10px; /* Add some space between messages */
+  display: flex;
+  align-items: center; 
+  margin-bottom: 10px;
 }
 
 .user-message, .other-message {
-  max-width: 60%; /* Limit message width */
-  word-wrap: break-word; /* Ensure long words do not overflow */
-  margin: 5px 10px; /* Adjust margin for spacing */
-  padding: 5px 10px; /* Padding inside message bubbles */
-  border-radius: 0.5em; /* Rounded corners for message bubbles */
-  color: #fff; /* Text color */
+  max-width: 60%; 
+  word-wrap: break-word;
+  margin: 12px 0px; 
+  padding: 5px 10px; 
+  border-top-right-radius: 0.5em; 
+  border-bottom-right-radius: 0.5em;
+  box-shadow: 1px 2px 5px rgba(9, 9, 9, 0.353);
+  background-color: #fff; 
+  font-family: "Jersey 15", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 
 .user-message {
-  background-color: #17A2B8; /* User message color */
-  order: 1; /* Ensure message is on the right */
+  border-left: 3px solid blue;
+  color: blue;
 }
 
 .other-message {
-  background-color: #007BFF; /* Other message color */
-  order: -1; /* Ensure message is on the left */
+  border-left: 3px solid #666363;
+  color: #666363;
 }
 
 .qr-code {
-  margin-left: 10px; /* Space between message and its QR code */
-  order: 2; /* Ensure QR code appears to the right of the message */
+  width: fit-content;
+  padding: 5px 10px;
+  border-top-right-radius: 0.5em; 
+  border-bottom-right-radius: 0.5em;
+  border-left: 3px solid blue;
+  box-shadow: 1px 2px 5px rgba(9, 9, 9, 0.353);
 }
 
 .clearfix::after {
