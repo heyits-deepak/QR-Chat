@@ -221,6 +221,28 @@ li {
   transition: transform ease-in-out 0.3s;
 }
 
+<<<<<<< Updated upstream
 #send:hover{
   transform: scale(1.02);
+=======
+#start-recording {
+  background-color: #ffc107; /* Bootstrap warning color for start button */
+}
+
+#stop-recording {
+  background-color: #dc3545; /* Bootstrap danger color for stop button */
+}
+
+#usernameModal .modal-content {
+  border-radius: 20px;
+}
+
+#usernameModalLabel {
+  text-align: center;
+}
+
+.input-group-append {
+  background-color: #007bff;
+  border-radius: 0 20px 20px 0;
+>>>>>>> Stashed changes
 }
