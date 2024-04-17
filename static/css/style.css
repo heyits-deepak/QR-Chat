@@ -1,57 +1,105 @@
-/* Custom CSS for styling */
 body {
-  background-color: #f4f4f4;
+  background-color: #f9f9f9;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .container {
-  max-width: 800px; /* Increased width to accommodate QR codes */
-  margin: 0 auto;
-  margin-top: 50px;
+  max-width: 800px;
+  margin: 50px auto;
   background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: left;
 }
 
 #chat {
-  overflow-y: auto; /* Ensure chat is scrollable */
-  max-height: 400px; /* Limit chat height with maximum height */
+  overflow-y: auto;
+  max-height: 500px;
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 li {
-  display: flex; /* Use flexbox for better alignment of messages and QR codes */
-  align-items: center; /* Align items vertically */
-  justify-content: flex-end; /* Align items to the right */
-  margin-bottom: 10px; /* Add some space between messages */
+  display: block;
+  margin-bottom: 15px;
 }
 
 .user-message, .other-message {
-  max-width: 60%; /* Limit message width */
-  word-wrap: break-word; /* Ensure long words do not overflow */
-  margin: 5px 10px; /* Adjust margin for spacing */
-  padding: 5px 10px; /* Padding inside message bubbles */
-  border-radius: 0.5em; /* Rounded corners for message bubbles */
-  color: #fff; /* Text color */
+  max-width: 70%;
+  word-wrap: break-word;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: #333;
 }
 
 .user-message {
-  background-color: #17A2B8; /* User message color */
-  order: 1; /* Ensure message is on the right */
+  background-color: #dcf8c6;
+  margin-left: auto;
+  text-align: left;
 }
 
 .other-message {
-  background-color: #007BFF; /* Other message color */
-  order: -1; /* Ensure message is on the left */
+  background-color: #ebebeb;
+  margin-right: auto;
+  text-align: left;
 }
 
 .qr-code {
-  margin-left: 10px; /* Space between message and its QR code */
-  order: 2; /* Ensure QR code appears to the right of the message */
+  display: inline-block;
+  margin-top: 10px;
+  float: right;
+  clear: both;
 }
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+#username-form, #message-input {
+  margin-top: 20px;
+}
+
+#message-input, #voice-message-input {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#message, #start-recording, #stop-recording {
+  border: 0;
+  padding-left: 15px;
+  flex-grow: 1;
+}
+
+#send, #start-recording, #stop-recording {
+  background-color: #007bff;
+  color: white;
+  border: 0;
+  padding: 0.375rem 0.75rem;
+}
+
+#start-recording {
+  background-color: #ffc107; /* Bootstrap warning color for start button */
+}
+
+#stop-recording {
+  background-color: #dc3545; /* Bootstrap danger color for stop button */
+}
+
+#usernameModal .modal-content {
+  border-radius: 20px;
+}
+
+#usernameModalLabel {
+  text-align: center;
+}
+
+.input-group-append {
+  background-color: #007bff;
+  border-radius: 0 20px 20px 0;
 }
