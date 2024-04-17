@@ -2,7 +2,8 @@
 /* Custom CSS for styling */
 
 body {
-  background-image: #f4f4f4;
+  background-image: #f9f9f9;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   height: 100vh;
   overflow: hidden;
   overflow-y: auto;
@@ -17,10 +18,11 @@ body {
 .container {
   max-width: 800px; /* Increased width to accommodate QR codes */
   margin: 0 auto;
+  margin-top: 50px;
   background-color: #fff;
-  padding: 20px 30px;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.408);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -36,153 +38,88 @@ body {
 
 #chat {
   overflow-y: auto; /* Ensure chat is scrollable */
-  height: 430px; /* Limit chat height with maximum height */
-  background: #fff;
-  border: 0.8px solid gray;
-  padding: 0px 0px;
-}
-
-::-webkit-scrollbar {
-  width: 8px; 
-  background-color: transparent; 
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: gray; 
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.joinBtn{
-  padding: 5px 12px;
-  background-color: blue;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.7rem;
-  font-family: "Jersey 15", sans-serif;
-  letter-spacing: 3px;
-  cursor: pointer;
-  transition: transform ease-in-out 0.3s;
-}
-
-.joinBtn:hover, .modal-footer button:hover{
-  transform: scale(1.04);
-}
-
-#usernameModal{
-  background-color: rgba(0, 94, 255, 0.299);
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-#usernameModal div{
-  border: none;
-  box-shadow: 0px 0px 8px rgba(251, 249, 249, 0.819);
-  font-family: "Jersey 15", sans-serif;
-  overflow: hidden;
-}
-
-#usernameModal div h5{
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: blue;
-  padding: 20px;
-}
-
-#usernameModal div input{
-  margin: 10px 20px;
-  width: 92%;
-  font-size: x-large;
-  padding: 0 10px;
-  color: #666363;
-  font-weight: 200;
-  border-radius: 5px;
-  border: solid 1px gray;
-}
-
-#usernameModal div input:focus{
-  outline: none;
-}
-
-.modal-footer{
-  padding: 20px;
-}
-
-.modal-footer button{
-  font-size: 1.3rem;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  text-transform: uppercase;
-  transition: transform ease-in-out 0.3s;
-}
-
-#join{
-  background: blue;
-}
-
-#messages{
-  min-height: 95%;
-  max-height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  overflow: auto;
+  max-height: 400px; /* Limit chat height with maximum height */
 }
 
 li {
-  display: flex;
-  align-items: center; 
-  /* margin-bottom: 10px; */
+  display: flex; /* Use flexbox for better alignment of messages and QR codes */
+  align-items: center; /* Align items vertically */
+  justify-content: flex-end; /* Align items to the right */
+  margin-bottom: 10px; /* Add some space between messages */
 }
 
 .user-message, .other-message {
-  max-width: 70%; 
-  word-wrap: break-word;
-  margin: 12px 0px; 
-  padding: 5px 10px; 
-  border-top-right-radius: 0.5em; 
-  border-bottom-right-radius: 0.5em;
-  box-shadow: 1px 2px 5px rgba(9, 9, 9, 0.353);
-  background-color: #fff; 
-  font-family: "Jersey 15", sans-serif;
-  letter-spacing: 2px;
-  font-size: 1.3rem;
-  font-weight: 400;
-  text-align: left;
+  max-width: 60%; /* Limit message width */
+  word-wrap: break-word; /* Ensure long words do not overflow */
+  margin: 5px 10px; /* Adjust margin for spacing */
+  padding: 5px 10px; /* Padding inside message bubbles */
+  border-radius: 0.5em; /* Rounded corners for message bubbles */
+  color: #fff; /* Text color */
 }
 
 .user-message {
-  border-left: 3px solid blue;
-  color: blue;
+  background-color: #17A2B8; /* User message color */
+  order: 1; /* Ensure message is on the right */
 }
 
 .other-message {
-  border-left: 3px solid #666363;
-  color: #666363;
+  background-color: #007BFF; /* Other message color */
+  order: -1; /* Ensure message is on the left */
 }
 
 .qr-code {
-  width: fit-content;
-  padding: 5px 10px;
-  margin-top: 12px;
-  border-top-right-radius: 0.5em; 
-  border-bottom-right-radius: 0.5em;
-  border-left: 3px solid blue;
-  box-shadow: 1px 2px 5px rgba(9, 9, 9, 0.353);
+  margin-left: 10px; /* Space between message and its QR code */
+  order: 2; /* Ensure QR code appears to the right of the message */
 }
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+#username-form, #message-input {
+  margin-top: 20px;
+}
+
+#message-input, #voice-message-input {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#message, #start-recording, #stop-recording {
+  border: 0;
+  padding-left: 15px;
+  flex-grow: 1;
+}
+
+#send, #start-recording, #stop-recording {
+  background-color: #007bff;
+  color: white;
+  border: 0;
+  padding: 0.375rem 0.75rem;
+}
+
+#start-recording {
+  background-color: #ffc107; /* Bootstrap warning color for start button */
+}
+
+#stop-recording {
+  background-color: #dc3545; /* Bootstrap danger color for stop button */
+}
+
+#usernameModal .modal-content {
+  border-radius: 20px;
+}
+
+#usernameModalLabel {
+  text-align: center;
+}
+
+.input-group-append {
+  background-color: #007bff;
+  border-radius: 0 20px 20px 0;
 }
 
 #message-input{

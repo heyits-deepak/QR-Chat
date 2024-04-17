@@ -36,7 +36,7 @@ class ConnectionManager:
         decoded_data = json.loads(data)
         for id, connection in self.active_connections.items():
             is_me = connection == webSocket
-            await connection.send_text(json.dumps({"isMe": is_me, "data": decoded_data['message'], "username": decoded_data['username']}))
+            await connection.send_text(json.dumps({"isMe": is_me, "data": decoded_data['message'], "username": decoded_data['username'], "type": decoded_data.get('type')}))
 
     def disconnect(self, websocket: WebSocket):
         id = self.find_connection_id(websocket)
@@ -59,7 +59,6 @@ async def websocket_endpoint(websocket: WebSocket):
             await connection_manager.broadcast(websocket, data)
     except WebSocketDisconnect:
         connection_manager.disconnect(websocket)
-        # Note: RedirectResponse is not applicable in WebSocket disconnection context.
 
 @app.get("/join", response_class=HTMLResponse)
 async def join_room(request: Request):
