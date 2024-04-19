@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
 /* Custom CSS for styling */
 
+::-webkit-scrollbar {
+  width: 8px; 
+  background-color: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray; 
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 body {
   background-image: #f9f9f9;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Jersey 15", sans-serif;
   height: 100vh;
   overflow: hidden;
   overflow-y: auto;
@@ -22,7 +33,7 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.408);
   text-align: center;
 }
 
@@ -34,6 +45,24 @@ body {
   font-weight: 600;
   font-family: "Jersey 15", sans-serif;
   letter-spacing: 3px;
+}
+
+#open-modal{
+  padding: 5px 12px;
+  background-color: blue;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.7rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: transform ease-in-out 0.3s;
+}
+
+.btn:hover{
+  transform: scale(1.04);
 }
 
 #chat {
@@ -109,8 +138,13 @@ li {
   background-color: #dc3545; /* Bootstrap danger color for stop button */
 }
 
+#usernameModal{
+  background-color: rgba(0, 94, 255, 0.299);
+}
+
 #usernameModal .modal-content {
-  border-radius: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(251, 249, 249, 0.819);
 }
 
 #usernameModalLabel {
