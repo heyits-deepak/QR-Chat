@@ -151,7 +151,7 @@ li {
 }
 .modal-content h5{
   color: blue;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -159,6 +159,34 @@ li {
 
 .modal-content input{
   width: 94%;
+  font-size: x-large;
+  padding: 0 10px;
+  color: #666363;
+  font-weight: 200;
+  border-radius: 5px;
+  border: solid 1px gray;
+}
+
+.modal-content input:focus{
+  outline: none;
+}
+
+.modal-footer{
+  display: flex;
+  gap: 5px;
+}
+
+.modal-footer button{
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  transition: transform ease-in-out 0.3s;
+}
+
+#join{
+  background-color: blue;
 }
 
 .input-group-append {
