@@ -75,10 +75,11 @@ body {
 #messages{
   min-height: 95%;
   max-height: fit-content;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  overflow: auto;
+  overflow: hidden;
 }
 
 li {
@@ -88,27 +89,42 @@ li {
 }
 
 .user-message, .other-message {
-  max-width: 60%; /* Limit message width */
-  word-wrap: break-word; /* Ensure long words do not overflow */
-  margin: 5px 10px; /* Adjust margin for spacing */
-  padding: 5px 10px; /* Padding inside message bubbles */
-  border-radius: 0.5em; /* Rounded corners for message bubbles */
-  color: #fff; /* Text color */
+  max-width: 70%; 
+  word-wrap: break-word;
+  margin: 12px 0px; 
+  padding: 5px 10px; 
+  border-top-right-radius: 0.5em; 
+  border-bottom-right-radius: 0.5em;
+  box-shadow: 1px 2px 5px rgba(9, 9, 9, 0.353);
+  background-color: #fff; 
+  font-family: "Jersey 15", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .user-message {
-  background-color: #17A2B8; /* User message color */
-  order: 1; /* Ensure message is on the right */
+  border-left: 3px solid blue;
+  color: blue;
 }
 
 .other-message {
-  background-color: #007BFF; /* Other message color */
-  order: -1; /* Ensure message is on the left */
+  border-left: 3px solid #666363;
+  color: #666363;
 }
 
 .qr-code {
-  margin-left: 10px; /* Space between message and its QR code */
-  order: 2; /* Ensure QR code appears to the right of the message */
+  width: fit-content;
+  padding: 5px 10px;
+  margin-top: 12px;
+  border-top-right-radius: 0.5em; 
+  border-bottom-right-radius: 0.5em;
+  border-left: 3px solid blue;
+  box-shadow: 1px 2px 5px rgba(9, 9, 9, 0.353);
 }
 
 .clearfix::after {
