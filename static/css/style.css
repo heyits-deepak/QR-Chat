@@ -29,9 +29,8 @@ body {
 .container {
   max-width: 800px; /* Increased width to accommodate QR codes */
   margin: 0 auto;
-  margin-top: 50px;
   background-color: #fff;
-  padding: 20px;
+  padding: 20px 28px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.408);
   text-align: center;
@@ -66,15 +65,26 @@ body {
 }
 
 #chat {
-  overflow-y: auto; /* Ensure chat is scrollable */
-  max-height: 400px; /* Limit chat height with maximum height */
+  overflow-y: auto; 
+  height: 400px;
+  background: #fff;
+  border: 0.8px solid gray;
+  padding: 0px 0px;
+}
+
+#messages{
+  min-height: 95%;
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  overflow: auto;
 }
 
 li {
-  display: flex; /* Use flexbox for better alignment of messages and QR codes */
-  align-items: center; /* Align items vertically */
-  justify-content: flex-end; /* Align items to the right */
-  margin-bottom: 10px; /* Add some space between messages */
+  display: flex; 
+  align-items: center; 
+
 }
 
 .user-message, .other-message {
