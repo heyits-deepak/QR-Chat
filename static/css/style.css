@@ -43,7 +43,6 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
-  font-family: "Jersey 15", sans-serif;
   letter-spacing: 3px;
 }
 
@@ -99,7 +98,6 @@ li {
   border-bottom-right-radius: 0.5em;
   box-shadow: 1px 2px 5px rgba(9, 9, 9, 0.353);
   background-color: #fff; 
-  font-family: "Jersey 15", sans-serif;
   letter-spacing: 2px;
   font-size: 1.3rem;
   font-weight: 400;
@@ -261,4 +259,37 @@ li {
 
 #send:hover{
   transform: scale(1.02);
+}
+
+@media (max-width: 917px) {
+  body{
+    height: 120vh;
+    overflow: auto;
+  }
+
+  .container{
+    padding: 18px;
+  }
+  
+  #message-input{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  #message-input input{
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 6px;
+  }
+
+  .input-group-append{
+    width: 100%;
+  }
+
+  #send{
+    width: 100%;
+  }
 }
